@@ -18,9 +18,12 @@ dotenv.config();
 
 const config: HardhatUserConfig = {
   zksolc: {
-    version: "1.3.8",
-    compilerSource: "binary",
-    settings: {},
+    version: "1.3.13",
+    settings: {
+      optimizer: {
+        mode: "z"
+      }
+    }
   },
   defaultNetwork: "zkSyncTestnet",
   networks: {
@@ -54,8 +57,7 @@ const config: HardhatUserConfig = {
   },
   // PLUGINS CONFIG
   namedAccounts: {
-    deployer: process.env.DEPLOY_ACCOUNT || "",
-    user: process.env.USER_ACCOUNT || "",
+    deployer: process.env.DEPLOY_ACCOUNT || ""
   },
   contractSizer: {
     // more info about this plugin in https://www.npmjs.com/package/hardhat-contract-sizer

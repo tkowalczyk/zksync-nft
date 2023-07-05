@@ -30,10 +30,12 @@
     "clean": "rm -rf ./abis ./artifacts-zk ./cache-zk ./deployments",
     "test": "hardhat test --network localhost",
     "deploy:greeter:localhost": "yarn hardhat --network localhost deploy-zksync --script 001-deploy-greeter.ts",
-    "deploy:greeter:testnet": "yarn hardhat --network zkSyncTestnet deploy-zksync --script 001-deploy-greeter.ts"
+    "deploy:greeter:testnet": "yarn hardhat --network zkSyncTestnet deploy-zksync --script 001-deploy-greeter.ts",
+    "deploy:zknft:localhost": "yarn hardhat --network localhost deploy-zksync --script 002-deploy-zknft.ts"
   },
   "dependencies": {
     "@matterlabs/hardhat-zksync-verify": "^0.1.8",
-    "@nomiclabs/hardhat-etherscan": "^3.1.7"
+    "@nomiclabs/hardhat-etherscan": "^3.1.7",
+    "@openzeppelin/contracts": "^4.9.2"
   }
 }
