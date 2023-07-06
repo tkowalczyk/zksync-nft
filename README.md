@@ -83,7 +83,7 @@ This made a new directory - `deployments/localhost` where you can find you CONTR
 
 ```
 yarn hardhat --network localhost info --contract CONTRACT_ADDRESS
-yarn hardhat --network localhost mint --contract CONTRACT_ADDRESS --amount 1
-yarn hardhat --network localhost balanceof --contract 0x6E6bc3D438d0f4Fb61c2141c97F008507E7bb183 --holder 0xE90E12261CCb0F3F7976Ae611A29e84a6A85f424
-yarn hardhat --network localhost tokenuri --contract 0x6E6bc3D438d0f4Fb61c2141c97F008507E7bb183 --tokenid 1
+yarn hardhat --network localhost mint --contract CONTRACT_ADDRESS --recipient 0xE90E12261CCb0F3F7976Ae611A29e84a6A85f424
+yarn hardhat --network localhost balanceof --contract CONTRACT_ADDRESS --holder 0xE90E12261CCb0F3F7976Ae611A29e84a6A85f424
+yarn hardhat --network localhost tokenuri --contract CONTRACT_ADDRESS --tokenid 1
 ```

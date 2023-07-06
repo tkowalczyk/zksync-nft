@@ -26,7 +26,7 @@ task("info", "get zknft info")
 
 task("mint", "mint an NFT")
     .addParam("contract", "Contract address")
-    .addParam("amount", "Amount of NFT to mint")
+    .addParam("recipient", "Recipient address")
     .setAction(async (taskArgs, hre) => {
         const network = (hre.network.config as HttpNetworkConfig);
         const rpc = new ethers.providers.JsonRpcProvider(network.url)
@@ -36,12 +36,12 @@ task("mint", "mint an NFT")
             let contract = new ethers.Contract(
                 `${taskArgs.contract}`,
                 new ethers.utils.Interface([
-                    `function mint(uint256 quantity) external payable`
+                    `function mintTo(address to) public`
                 ]),
                 rpc
             )
 
-            console.log(await contract.connect(wallet).mint(taskArgs.amount));
+            console.log(await contract.connect(wallet).mintTo(taskArgs.recipient));
         } catch (error) {
             console.log(error)
         }
