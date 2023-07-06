@@ -17,7 +17,6 @@
     "ethers": "^5.7.2",
     "hardhat": "^2.12.4",
     "hardhat-abi-exporter": "^2.10.1",
-    "hardhat-contract-sizer": "^2.8.0",
     "hardhat-deploy": "^0.11.26",
     "hardhat-gas-reporter": "^1.0.9",
     "mocha": "^10.2.0",
@@ -31,7 +30,8 @@
     "test": "hardhat test --network localhost",
     "deploy:greeter:localhost": "yarn hardhat --network localhost deploy-zksync --script 001-deploy-greeter.ts",
     "deploy:greeter:testnet": "yarn hardhat --network zkSyncTestnet deploy-zksync --script 001-deploy-greeter.ts",
-    "deploy:zknft:localhost": "yarn hardhat --network localhost deploy-zksync --script 002-deploy-zknft.ts"
+    "deploy:zknft:localhost": "yarn hardhat --network localhost deploy-zksync --script 002-deploy-zknft.ts",
+    "deploy:zknft:testnet": "yarn hardhat --network zkSyncTestnet deploy-zksync --script 002-deploy-zknft.ts"
   },
   "dependencies": {
     "@matterlabs/hardhat-zksync-verify": "^0.1.8",

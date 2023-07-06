@@ -5,7 +5,6 @@ import "@matterlabs/hardhat-zksync-solc";
 import "@matterlabs/hardhat-zksync-verify";
 // Plugins
 import "hardhat-deploy";
-import "hardhat-contract-sizer";
 import "hardhat-abi-exporter";
 import "@typechain/hardhat";
 
@@ -19,10 +18,14 @@ dotenv.config();
 const config: HardhatUserConfig = {
   zksolc: {
     version: "1.3.13",
+    compilerSource: 'binary',
     settings: {
       optimizer: {
+        enabled: true,
         mode: "z"
-      }
+      },
+      isSystem: false,
+      forceEvmla: false,
     }
   },
   defaultNetwork: "zkSyncTestnet",
@@ -58,12 +61,6 @@ const config: HardhatUserConfig = {
   // PLUGINS CONFIG
   namedAccounts: {
     deployer: process.env.DEPLOY_ACCOUNT || ""
-  },
-  contractSizer: {
-    // more info about this plugin in https://www.npmjs.com/package/hardhat-contract-sizer
-    alphaSort: true,
-    runOnCompile: true,
-    disambiguatePaths: false,
   },
   abiExporter: {
     // more info about this plugin in https://www.npmjs.com/package/hardhat-abi-exporter

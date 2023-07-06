@@ -22,7 +22,7 @@ contract zkNFT is
     constructor() ERC721("zk Non-Fungible Token", "zkNFT") {}
 
     function _baseURI() internal pure override returns (string memory) {
-        return "ipfs://QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn";
+        return "ipfs://QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn/";
     }
 
     function _beforeTokenTransfer(

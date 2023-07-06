@@ -85,5 +85,35 @@ This made a new directory - `deployments/localhost` where you can find you CONTR
 yarn hardhat --network localhost info --contract CONTRACT_ADDRESS
 yarn hardhat --network localhost mint --contract CONTRACT_ADDRESS --recipient 0xE90E12261CCb0F3F7976Ae611A29e84a6A85f424
 yarn hardhat --network localhost balanceof --contract CONTRACT_ADDRESS --holder 0xE90E12261CCb0F3F7976Ae611A29e84a6A85f424
-yarn hardhat --network localhost tokenuri --contract CONTRACT_ADDRESS --tokenid 1
+yarn hardhat --network localhost tokenuri --contract CONTRACT_ADDRESS --tokenid 0
+yarn hardhat --network localhost ownerbyindex --contract CONTRACT_ADDRESS --holder 0xE90E12261CCb0F3F7976Ae611A29e84a6A85f424 --tokenindex 0
+```
+
+#### zkSync Testnet
+
+Remember to properly set the values of:
+
+- `DEPLOY_ACCOUNT`
+- `DEPLOY_PRIVATE_KEY`
+
+in `.env` file.
+
+```
+yarn deploy:zknft:testnet
+```
+
+This made a new directory - `deployments/zkSyncTestnet` where you can find you CONTRACT_ADDRESS
+
+```
+yarn hardhat --network zkSyncTestnet info --contract CONTRACT_ADDRESS
+yarn hardhat --network zkSyncTestnet mint --contract CONTRACT_ADDRESS --recipient 0xE90E12261CCb0F3F7976Ae611A29e84a6A85f424
+yarn hardhat --network zkSyncTestnet balanceof --contract CONTRACT_ADDRESS --holder 0xE90E12261CCb0F3F7976Ae611A29e84a6A85f424
+yarn hardhat --network zkSyncTestnet tokenuri --contract CONTRACT_ADDRESS --tokenid 0
+yarn hardhat --network zkSyncTestnet ownerbyindex --contract CONTRACT_ADDRESS --holder 0xE90E12261CCb0F3F7976Ae611A29e84a6A85f424 --tokenindex 0
+```
+
+Verify
+
+```
+yarn hardhat --network zkSyncTestnet vrf --contract CONTRACT_ADDRESS --name CONTRACT_NAME
 ```

@@ -5,7 +5,7 @@ import { Deployer } from "@matterlabs/hardhat-zksync-deploy";
 task("vrf", "set greeting")
     .addParam("contract", "Contract address")
     .addParam("name", "Contract name")
-    .addParam("args", "Constructor arguments")
+    //.addParam("args", "Constructor arguments")
     .setAction(async (taskArgs, hre) => {
 
         try {
@@ -23,7 +23,7 @@ task("vrf", "set greeting")
             const verificationId = await hre.run("verify:verify", {
                 address: `${taskArgs.contract}`,
                 contract: `${contractFullyQualifedName}`,
-                constructorArguments: [`${taskArgs.args}`],
+                //constructorArguments: [`${taskArgs.args}`],
                 bytecode: artifact.bytecode,
             });
             console.log(`${contractFullyQualifedName} deployed at ${`${taskArgs.contract}`} verified! VerificationId: ${verificationId}`)

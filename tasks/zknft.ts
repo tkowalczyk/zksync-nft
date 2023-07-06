@@ -91,3 +91,26 @@ task("tokenuri", "get number of tokens from address")
             console.log(error)
         }
     });
+
+task("ownerbyindex", "get tokens from address")
+    .addParam("contract", "Contract address")
+    .addParam("holder", "Holder address")
+    .addParam("tokenindex", "NFT index")
+    .setAction(async (taskArgs, hre) => {
+        const network = (hre.network.config as HttpNetworkConfig);
+        const rpc = new ethers.providers.JsonRpcProvider(network.url)
+
+        try {
+            let contract = new ethers.Contract(
+                `${taskArgs.contract}`,
+                new ethers.utils.Interface([
+                    `function tokenOfOwnerByIndex(address owner, uint256 index) external view returns (uint256)`
+                ]),
+                rpc
+            )
+
+            console.log(`${await contract.tokenOfOwnerByIndex(taskArgs.holder, taskArgs.tokenindex)}`)
+        } catch (error) {
+            console.log(error)
+        }
+    });

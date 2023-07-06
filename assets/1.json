@@ -1,0 +1,20 @@
+{
+    "description": "First zk friendly NFT collection from GameSwift",
+    "external_url": "https://gameswift.io",
+    "image": "https://cdn.gameswift.io/gameswift/shared/images/og-gameswift.webp",
+    "name": "zk from GameSwift",
+    "attributes": [
+        {
+            "trait_type": "gsID",
+            "value": 1
+        },
+        {
+            "trait_type": "zkFriendly",
+            "value": true
+        },
+        {
+            "trait_type": "Decentralized",
+            "value": true
+        }
+    ]
+}

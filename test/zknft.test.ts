@@ -21,7 +21,7 @@ describe('zkNFT', function () {
 
         const zkNFT = await deployzkNFT(deployer);
 
-        const mintTxn = await zkNFT.mint(1);
+        const mintTxn = await zkNFT.mintTo(wallet.address);
 
         await mintTxn.wait();
 
